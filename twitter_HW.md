@@ -1,26 +1,11 @@
 
 ## News Mood
 
-Your final output should provide a visualized summary of the sentiments expressed in Tweets sent out by the following news organizations: **BBC, CBS, CNN, Fox, and New York times**.
+In this project, I analyzed the sentiment of tweets from the Twitter accounts of major news organizations. To obtain the data for this analysis, I pulled 100 most recent tweets each from BBC, CBS, CNN, Fox and the New York times using Twitter’s Tweepy API. I then analyzed the sentiment of each tweet using the Vader library. I then converted the collection of news tweets into a Pandas dataframe and exported  to a csv file.
 
-The first plot will be and/or feature the following:
+I used Matplotlib to produce a scatter plot of the sentiment for each tweet. I then aggregated the data to find the overall sentiment of each news organization’s tweets and created a bar graph to illustrate those findings.
 
-* Be a scatter plot of sentiments of the last **100** tweets sent out by each news organization, ranging from -1.0 to 1.0, where a score of 0 expresses a neutral sentiment, -1 the most negative sentiment possible, and +1 the most positive sentiment possible.
-* Each plot point will reflect the _compound_ sentiment of a tweet.
-* Sort each plot point by its relative timestamp.
-
-The second plot will be a bar plot visualizing the _overall_ sentiments of the last 100 tweets from each organization. For this plot, you will again aggregate the compound sentiments analyzed by VADER.
-
-The tools of the trade you will need for your task as a data analyst include the following: tweepy, pandas, matplotlib, and VADER.
-
-Your final Jupyter notebook must:
-
-* Pull last 100 tweets from each outlet.
-* Perform a sentiment analysis with the compound, positive, neutral, and negative scoring for each tweet.
-* Pull into a DataFrame the tweet's source account, its text, its date, and its compound, positive, neutral, and negative sentiment scores.
-* Export the data in the DataFrame into a CSV file.
-* Save PNG images for each plot.
-
+Some of my observations can be found at the bottom.
 
 ```python
 # Dependencies
@@ -35,11 +20,6 @@ import numpy as np
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 analyzer = SentimentIntensityAnalyzer()
-
-consumer_key='O0lIqXHCu0YRQwN0gmHMsXQHy'
-consumer_secret='Sf8cawo0rB8flAUI2oYHon0kLoaWnBnH1S6my3r5AIcMOzi7hn'
-app_key='1008873804733374464-Eqc2CpyeFEpl7nV1EgTlH4lPPhKvj7'
-app_secret='8MNfd21s8l7oC9Wvi2jIHRTJUgMZm4afLgbQ1yXCMK9AM'
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(app_key, app_secret)
