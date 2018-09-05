@@ -1,5 +1,6 @@
 
-## News Mood
+## Twitter News Mood
+wk-7 homework
 
 In this project, I analyzed the sentiment of tweets from the Twitter accounts of major news organizations. To obtain the data for this analysis, I pulled 100 most recent tweets each from BBC, CBS, CNN, Fox and the New York times using Twitter’s Tweepy API. I then analyzed the sentiment of each tweet using the Vader library. I then converted the collection of news tweets into a Pandas dataframe and exported  to a csv file.
 
